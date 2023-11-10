@@ -1,5 +1,6 @@
 package com.guilherme.listadecompras
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,25 +15,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val produtosAdapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1)
         val list_view_produtos = findViewById<ListView>(R.id.list_view_produtos)
-        var btn_inserir = findViewById<Button>(R.id.btn_inserir)
-        var txt_produto = findViewById<EditText>(R.id.txt_produto)
+       // var btn_inserir = findViewById<Button>(R.id.btn_inserir)
+       // var txt_produto = findViewById<EditText>(R.id.txt_produto)
         list_view_produtos.adapter = produtosAdapter
-
+        val btn_adicionar = findViewById<Button>(R.id.btn_adicionar)
         //val item = "Feijão"
        // produtosAdapter.add(item)
-        btn_inserir.setOnClickListener{
-           val produto = txt_produto.text.toString()
-            if(produto.isNotEmpty()) {
-                //adicionando ao adapitador(lista)
-                produtosAdapter.add(produto)
-                //limpar a caixa e texto
-                txt_produto.text.clear()
-                }else{
-                    //mensagem de erro
-                txt_produto.error = "preencha um valor"
-            }
-        }
+//        btn_inserir.setOnClickListener{
+//           val produto = txt_produto.text.toString()
+//            if(produto.isNotEmpty()) {
+//                //adicionando ao adapitador(lista)
+//                produtosAdapter.add(produto)
+//                //limpar a caixa e texto
+//                txt_produto.text.clear()
+//                }else{
+//                    //mensagem de erro
+//                txt_produto.error = "hello word"
+//            }
+//        }
 
+        btn_adicionar.setOnClickListener{
+            val intent = Intent(this,CadastroActivity::class.java)
+            startActivity(intent)
+        }
         list_view_produtos.setOnItemClickListener { parent, view, position, id ->
             val selectedItem = produtosAdapter.getItem(position)
             // Aqui você pode manipular o item selecionado, se necessário

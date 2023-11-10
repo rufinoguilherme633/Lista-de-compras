@@ -13,6 +13,19 @@
         android:theme="@style/Theme.ListaDeCompras"
         tools:targetApi="31">
         <activity
+            android:name=".CadastroActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"
+                />
+            <!--(android:name)indicação que vai ser filha de outra activity -->
+            <!--(android:value) indicação quem vai ser a div pai-->
+            <!-- Meta-dados indicando que a atividade pai (parent) é MainActivity -->
+
+        </activity>
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

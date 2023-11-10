@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Declaração XML indicando a versão e codificação do documento -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastroActivity"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+    <!-- Layout principal Linear que organiza as visualizações de forma vertical com preenchimento de 16dp -->
+    <TextView
+        android:text="Cadastrar Produto"
+        android:textStyle="bold"
+        android:textSize="21sp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <!-- Texto exibindo "Cadastrar Produto" com estilo em negrito, tamanho de 21sp e margem inferior de 15dp -->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@android:drawable/ic_menu_camera"
+        android:id="@+id/image_foto_produto"
+        android:layout_gravity="center_horizontal"
+        />
+    <!-- Imagem exibindo o ícone da câmera(do próprio android -> src), com largura e altura de 100dp, e alinhamento central horizontal -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_produto"
+        android:hint="Nome do Produto"/>
+    <!-- Campo de texto para inserir o nome do produto -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_qnt"
+        android:hint="Quantidade"
+        android:inputType="number"
+        />
+
+    <!-- Campo de texto para inserir a quantidade do produto -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_valor"
+        android:inputType="numberDecimal"
+        android:hint="R$ 0.00"
+        />
+    <!-- ( android:inputType="numberDecimal")Campo de texto para inserir o valor do produto, aceitando apenas números decimais -->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inserir"
+        android:id="@+id/btn_inserir"/>
+    <!-- Botão para realizar a ação de inserção do produto -->
+</LinearLayout>
